@@ -1,0 +1,110 @@
+.column {
+  min-width: 280px;
+  width: 280px;
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  max-height: calc(100vh - 250px);
+  transition: all 0.2s ease;
+
+  &.draggedOver {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  &.dragging {
+    opacity: 0.5;
+  }
+}
+
+.header {
+  margin-bottom: 1rem;
+  cursor: move;
+
+  .titleRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-weight: 600;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    .colorDot {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+    }
+
+    .count {
+      font-size: 0.75rem;
+      color: #6b7280;
+      font-weight: 400;
+    }
+  }
+
+  .headerActions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .selectedInfo {
+    font-size: 0.75rem;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.tasksList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  max-height: calc(100vh - 300px);
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 0.25rem;
+
+    &:hover {
+      background: #9ca3af;
+    }
+  }
+}
+
+.addTaskSection {
+  margin-top: auto;
+
+  .addTaskForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .formButtons {
+    display: flex;
+    gap: 0.5rem;
+  }
+}

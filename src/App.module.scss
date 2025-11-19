@@ -1,0 +1,58 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    padding: 2rem;
+  }
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.toolbar {
+  margin-bottom: 1.5rem;
+
+  .searchFilterCard {
+    padding: 1rem;
+
+    .searchFilterContent {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+.board {
+  .columnsContainer {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+
+    &::-webkit-scrollbar {
+      height: 0.75rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f3f4f6;
+      border-radius: 0.375rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 0.375rem;
+
+      &:hover {
+        background: #9ca3af;
+      }
+    }
+  }
+}
