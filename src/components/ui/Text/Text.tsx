@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './Text.module.scss';
 
+export type TextElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+export type TextSize = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+export type TextWeight = 'normal' | 'medium' | 'semibold' | 'bold';
+export type TextColor = 'primary' | 'secondary' | 'muted';
+
 interface TextProps {
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
-  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
-  weight?: 'normal' | 'medium' | 'semibold' | 'bold';
-  color?: 'primary' | 'secondary' | 'muted';
+  as?: TextElement;
+  size?: TextSize;
+  weight?: TextWeight;
+  color?: TextColor;
   children: React.ReactNode;
   style?: React.CSSProperties;
   onDoubleClick?: () => void;

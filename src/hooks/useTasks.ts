@@ -52,30 +52,6 @@ export const useTasks = (initialTasks: Task[] = []) => {
   }, []);
 
   /**
-   * Move task to a different column
-   */
-  const moveTask = useCallback((taskId: string, targetColumnId: string, targetOrder: number) => {
-    setTasks(prev => prev.map(task => {
-      if (task.id === taskId) {
-        return { ...task, columnId: targetColumnId, order: targetOrder };
-      }
-      return task;
-    }));
-  }, []);
-
-  /**
-   * Reorder task within the same column
-   */
-  const reorderTask = useCallback((taskId: string, newOrder: number) => {
-    setTasks(prev => prev.map(task => {
-      if (task.id === taskId) {
-        return { ...task, order: newOrder };
-      }
-      return task;
-    }));
-  }, []);
-
-  /**
    * Update tasks list directly (for drag-and-drop)
    */
   const updateTasks = useCallback((newTasks: Task[]) => {
@@ -88,8 +64,6 @@ export const useTasks = (initialTasks: Task[] = []) => {
     toggleComplete,
     deleteTask,
     editTask,
-    moveTask,
-    reorderTask,
     updateTasks
   };
 };

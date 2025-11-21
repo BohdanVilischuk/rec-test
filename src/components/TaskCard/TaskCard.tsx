@@ -84,11 +84,6 @@ const TaskCard: React.FC<TaskCardProps> = ({
     }
   }, [isEditing]);
 
-  const handleOpenEditModal = () => {
-    setEditValue(task.title);
-    setShowEditModal(true);
-  };
-
   const handleSaveEdit = () => {
     const trimmed = editValue.trim();
     if (trimmed && trimmed !== task.title) {
